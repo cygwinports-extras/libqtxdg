@@ -1,0 +1,18 @@
+inherit qt4-cmake
+
+NAME="libqtxdg"
+VERSION=0.5.3
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="Qt4 XDG library"
+DESCRIPTION="A Qt4 implementation of Freedesktop.org specifications"
+HOMEPAGE="http://lxqt.org/"
+SRC_URI="http://lxqt.org/downloads/libqtxdg/${VERSION}/${NAME}-${VERSION}.tar.xz"
+SRC_DIR=.
+PATCH_URI="0.5.3-cmake-install.patch"
+
+PKG_NAMES="libqtxdg0 libqtxdg-common libqtxdg-devel"
+libqtxdg0_REQUIRES="libqtxdg-common"
+libqtxdg0_CONTENTS="usr/bin/cygqtxdg-0.dll"
+libqtxdg_common_CONTENTS="usr/share/doc/ usr/share/${NAME}/"
+libqtxdg_devel_CONTENTS="usr/include/ usr/lib/ usr/share/cmake/qtxdg/"
